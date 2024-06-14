@@ -1,11 +1,7 @@
-"use client";
-
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 
-
-import { Player as Lottie } from '@lottiefiles/react-lottie-player';
-
+import Lottie from "react-lottie";
 
 import { cn } from "@/utils/cn";
 
@@ -14,6 +10,7 @@ import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
+
 export const BentoGrid = ({
   className,
   children,
@@ -25,7 +22,7 @@ export const BentoGrid = ({
     <div
       className={cn(
         // change gap-4 to gap-8, change grid-cols-3 to grid-cols-5, remove md:auto-rows-[18rem], add responsive code
-        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-8 lg:gap-8 mx-auto",
+        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto",
         className
       )}
     >
@@ -55,7 +52,7 @@ export const BentoGridItem = ({
   spareImg?: string;
 }) => {
   const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["Python", "NextJS", "MongoDB"];
+  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
 
   const [copied, setCopied] = useState(false);
 
@@ -69,7 +66,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "avijitcreation@outlook.com";
+    const text = "hsu@jsmastery.pro";
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
@@ -108,7 +105,7 @@ export const BentoGridItem = ({
             <img
               src={spareImg}
               alt={spareImg}
-              width={220}
+              //   width={220}
               className="object-cover object-center w-full h-full"
             />
           )}
